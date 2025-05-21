@@ -1,0 +1,98 @@
+.sessions-controller.new-action * {
+    box-sizing: border-box;
+}
+.sessions-controller.new-action {
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sessions-controller.new-action .login-container {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.sessions-controller.new-action .login-container body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.sessions-controller.new-action .login-container h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+}
+
+.sessions-controller.new-action .login-container .input-group {
+    margin-bottom: 20px;
+}
+
+.sessions-controller.new-action .login-container .input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+}
+
+.sessions-controller.new-action .login-container .input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.sessions-controller.new-action .login-container .input-field:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.sessions-controller.new-action .login-container .checkbox {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #555;
+}
+
+.sessions-controller.new-action .login-container .login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sessions-controller.new-action .login-container .login-btn:hover {
+    background: #0056b3;
+}
+
+.sessions-controller.new-action .login-container .footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.sessions-controller.new-action .login-container .footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.sessions-controller.new-action .login-container .footer a:hover {
+    text-decoration: underline;
+}

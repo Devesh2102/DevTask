@@ -1,9 +1,30 @@
-<h1>Dev Tasks</h1>
+<% content_for :dashboard_css do %>
+  <%= stylesheet_link_tag 'home/dashboard', media: 'all' %>
+<% end %>
 
 
 <% if user_signed_in? %>
-  <div> Welcome <%= current_user.email %> </div>
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %>
+  <div class="container1">
+    <nav class="sidebar" aria-label="Sidebar navigation">
+      <h2>Dev Tasks</h2>
+      <ul>
+        <li><button type="button">Projects</button></li>
+        <li><button type="button">My Tasks</button></li>
+        <li><button type="button">Team</button></li>
+        <li><button type="button">Settings</button></li>
+        <li><%= button_to "Sign out", destroy_user_session_path, method: :delete, form_class: "logout-form" %></li>
+      </ul>
+    </nav>
+
+    <main class="main">
+      <div class="greeting" id="greeting">Hello, <%= current_user.email %></div>
+      <hr style="margin-bottom: 20px;">
+      <h3>Project Overview Cards:</h3>
+      <div class="card-container">
+        <div class="card">Project A</div>
+        <div class="card">Project B</div>
+        <div class="card">Project C</div>
+      </div>
+    </main>
+  </div>
 <% end %>

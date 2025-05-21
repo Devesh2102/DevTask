@@ -1,0 +1,19 @@
+<!-- app/views/projects/_project_card.html.erb -->
+
+<div class="card shadow rounded-4 mb-4">
+  <div class="card-body">
+    <h5 class="card-title fw-bold">📁 <%= project.name %></h5>
+    <p class="card-text mb-1"><strong>📅 Deadline:</strong> <%= project.deadline.strftime("%B %d") %></p>
+    <p class="card-text mb-3"><strong>✅ Tasks Done:</strong> <%= project.tasks_done %> / <%= project.total_tasks %></p>
+
+    <% progress = (project.tasks_done.to_f / project.total_tasks * 100).round %>
+    <div class="progress mb-3" style="height: 20px;">
+      <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+           style="width: <%= progress %>%;" aria-valuenow="<%= progress %>" aria-valuemin="0" aria-valuemax="100">
+        <%= progress %>%
+      </div>
+    </div>
+
+    <%= link_to "View Project", project_path(project), class: "btn btn-primary" %>
+  </div>
+</div>
