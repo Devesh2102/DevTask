@@ -8,7 +8,7 @@
     <nav class="sidebar" aria-label="Sidebar navigation">
       <h2>Dev Tasks</h2>
       <ul>
-        <li><button type="button">Projects</button></li>
+        <li><%= link_to "Projects", projects_path, class: "btn-link p-2 text-decoration-none text-white"%></li>
         <li><button type="button">My Tasks</button></li>
         <li><button type="button">Team</button></li>
         <li><button type="button">Settings</button></li>
@@ -17,7 +17,16 @@
     </nav>
 
     <main class="main">
-      <div class="greeting" id="greeting">Hello, <%= current_user.email %></div>
+      <div class="greeting" id="greeting">
+        <% if current_user.admin? %>
+          <p>Welcome <%= current_user.user_name %>. You can manage everything.</p>
+        <% elsif current_user.manager? %>
+          <p>Welcome <%= current_user.user_name %>. You can manage team tasks.</p>
+        <% else %>
+          <p>Welcome <%= current_user.user_name %>. You can view and update your tasks.</p>
+        <% end %>
+
+      </div>
       <hr style="margin-bottom: 20px;">
       <h3>Project Overview Cards:</h3>
       <div class="card-container">
